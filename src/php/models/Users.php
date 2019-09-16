@@ -42,6 +42,7 @@ class Users extends Model
 		$database = $this->getApp()->getDatabase();
 		return $database->query($sql, $data, false);
 	}
+
 	public function logIn(string $login, string $password)
 	{
 		$sql = "SELECT * FROM users WHERE login=:login";
@@ -63,9 +64,27 @@ class Users extends Model
 		}
 	}
 
-	/*public function updateUser(string login, string password, string email)
+	public function updateUser(string $id, string $login, string $password, string $email)
 	{
-		
-	}*/
+		$sql = 
+			"UPDATE user
+			SET login = '$login', password = '$password', email = '$email'
+			WHERE id = '$id'";
+		$database = $this->getApp()->getDatabase();
+		return $database->query($sql);
+	}
 
+	/*
+		function update_customer($customerID, $firstName, $lastName, $address, $city, $state, $postalCode, $countryCode, $phone, $email) {
+		    global $db;
+		    $query = "UPDATE customers
+		              SET
+		                  firstName = '$firstName', lastName = '$lastName', address = '$address', city = '$city', state = '$state',
+		                  postalCode = '$postalCode', countryCode = '$countryCode', phone = '$phone', email = '$email'
+		              WHERE customerID = '$customerID' ";
+		    $db->exec($query);
+
+		}
+
+	*/
 }
