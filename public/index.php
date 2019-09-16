@@ -7,15 +7,20 @@ use tranber\services\App;
 
 include '../vendor/autoload.php';
 
+session_start();
+
 $data = [
 	'title'    => 'Tranber',
-	'site-url' => 'http://localhost/tranber-2/public/',
+	'site-url' => 'http://localhost/tranber/public/',
 	'routes'   => [
 		'/'       => 'tranber\controllers\Home',
 		'sign-up' => 'tranber\controllers\SignUp',
+		'sign-in' => 'tranber\controllers\SignIn',
+		'sign-out' => 'tranber\controllers\SignOut',
+		'update-profile' => 'tranber\controllers\UpdateProfile',
 	],
 	'database' => [
-		'name' => 'tranberrrr',
+		'name' => 'tranber',
 		'user' => 'root',
 		'pass' => '',
 		'host' => 'localhost',
