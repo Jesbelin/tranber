@@ -57,7 +57,7 @@ class Users extends Model
 			:null;
 		*/
 		if($user && array_key_exists(0, $user) && password_verify($password, $user[0]['password'])){
-			return $user;
+			return $user[0];
 		} else {
 			return null;
 		}
