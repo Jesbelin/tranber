@@ -17,7 +17,7 @@ $data = [
 		'sign-up' => 'tranber\controllers\SignUp',
 		'sign-in' => 'tranber\controllers\SignIn',
 		'sign-out' => 'tranber\controllers\SignOut',
-		'update-profile' => 'tranber\controllers\UpdateProfile',
+		'update-profile' => 'tranber\controllers\SignUpdateProfile',
 	],
 	'database' => [
 		'name' => 'tranber',
